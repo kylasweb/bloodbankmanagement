@@ -210,9 +210,9 @@ def update_approve_status_view(request,pk):
         stock.unit=stock.unit-unit
         stock.save()
         req.status="Approved"
-        
+
     else:
-        message="Stock Doest Not Have Enough Blood To Approve This Request, Only "+str(stock.unit)+" Unit Available"
+        message = f"Stock Doest Not Have Enough Blood To Approve This Request, Only {str(stock.unit)} Unit Available"
     req.save()
 
     requests=models.BloodRequest.objects.all().filter(status='Pending')
