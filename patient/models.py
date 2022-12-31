@@ -15,7 +15,7 @@ class Patient(models.Model):
    
     @property
     def get_name(self):
-        return self.user.first_name+" "+self.user.last_name
+        return f"{self.user.first_name} {self.user.last_name}"
     @property
     def get_instance(self):
         return self
